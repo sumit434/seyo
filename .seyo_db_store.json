@@ -1,0 +1,1196 @@
+{
+  "businesses": [
+    [
+      "biz_rustic_fork",
+      {
+        "id": "biz_rustic_fork",
+        "name": "The Rustic Fork Bistro",
+        "slug": "rustic-fork",
+        "email": "manager@rusticfork.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "1741e66a76a4f35f3f03c1f72a45989ea40b02d0b1353f4fd1aa198c698eb4b3",
+        "tier": "combined",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 5,
+        "loyaltyReward": "Free Signature Artisan Pizza & Handcrafted Dessert",
+        "category": "Artisanal Italian & Craft Dining",
+        "logoEmoji": "🍕",
+        "address": "42 Heritage Boulevard, Downtown Square",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": [
+          {
+            "id": "sw_1",
+            "rewardLabel": "20% Off Main Course",
+            "emoji": "🍝",
+            "weight": 30
+          },
+          {
+            "id": "sw_2",
+            "rewardLabel": "Free Craft Mocktail",
+            "emoji": "🍹",
+            "weight": 25
+          },
+          {
+            "id": "sw_3",
+            "rewardLabel": "Crispy Bruschetta Platter",
+            "emoji": "🥖",
+            "weight": 20
+          },
+          {
+            "id": "sw_4",
+            "rewardLabel": "15% Off Total Dining Bill",
+            "emoji": "🎟️",
+            "weight": 15
+          },
+          {
+            "id": "sw_5",
+            "rewardLabel": "Double Loyalty Stamp Today",
+            "emoji": "⭐",
+            "weight": 7
+          },
+          {
+            "id": "sw_6",
+            "rewardLabel": "Free Gelato Trio",
+            "emoji": "🍨",
+            "weight": 3
+          }
+        ]
+      }
+    ],
+    [
+      "biz_brew_co",
+      {
+        "id": "biz_brew_co",
+        "name": "Brew & Co. Specialty Coffee",
+        "slug": "brew-co",
+        "email": "manager@brewco.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "159c64ace9bd0a7b5efd416df96a5420646fb9c57088976a70191cc481f3f809",
+        "tier": "loyalty",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 6,
+        "loyaltyReward": "Complimentary Single-Origin Pour Over & Fresh Croissant",
+        "category": "Specialty Roastery & Espresso Bar",
+        "logoEmoji": "☕",
+        "address": "18 Roaster Lane, Arts District",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": [
+          {
+            "id": "sw_b1",
+            "rewardLabel": "Free Upgrade to Large",
+            "emoji": "☕",
+            "weight": 40
+          },
+          {
+            "id": "sw_b2",
+            "rewardLabel": "Free Butter Croissant",
+            "emoji": "🥐",
+            "weight": 30
+          },
+          {
+            "id": "sw_b3",
+            "rewardLabel": "20% Off Bag of Beans",
+            "emoji": "📦",
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    [
+      "biz_velvet_lounge",
+      {
+        "id": "biz_velvet_lounge",
+        "name": "Velvet Lounge & Tapas",
+        "slug": "velvet-lounge",
+        "email": "manager@velvetlounge.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "d76d68966e32046b3860c27eb71bd3a0d9bc84942c8d2592c6acf09bcb71e446",
+        "tier": "spin",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 5,
+        "loyaltyReward": "VIP Cocktail Platter",
+        "category": "Cocktails & Evening Tapas",
+        "logoEmoji": "🍸",
+        "address": "77 High Street, Waterfront Promenade",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": [
+          {
+            "id": "sw_v1",
+            "rewardLabel": "1 Free Tapas Dish",
+            "emoji": "🍢",
+            "weight": 35
+          },
+          {
+            "id": "sw_v2",
+            "rewardLabel": "Signature Welcome Cocktail",
+            "emoji": "🍸",
+            "weight": 25
+          },
+          {
+            "id": "sw_v3",
+            "rewardLabel": "20% Off Evening Check",
+            "emoji": "✨",
+            "weight": 25
+          },
+          {
+            "id": "sw_v4",
+            "rewardLabel": "Free Churros with Dark Chocolate",
+            "emoji": "🍫",
+            "weight": 15
+          }
+        ]
+      }
+    ],
+    [
+      "biz_glow_salon",
+      {
+        "id": "biz_glow_salon",
+        "name": "Glow Hair & Wellness Studio",
+        "slug": "glow-salon",
+        "email": "manager@glowsalon.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "c14f6039b3fc626512946f1a036d41ee19e0666b5e48633a8b18d3691091ad09",
+        "tier": "review",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 4,
+        "loyaltyReward": "Free Botanical Hair Spa Treatment",
+        "category": "Luxury Salon & Wellness",
+        "logoEmoji": "✨",
+        "address": "104 Bloom Avenue, Suite 3B",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": [
+          {
+            "id": "sw_g1",
+            "rewardLabel": "15% Off Any Service",
+            "emoji": "💇‍♀️",
+            "weight": 50
+          },
+          {
+            "id": "sw_g2",
+            "rewardLabel": "Free Conditioning Treatment",
+            "emoji": "💆‍♀️",
+            "weight": 50
+          }
+        ]
+      }
+    ],
+    [
+      "biz_urban_spice",
+      {
+        "id": "biz_urban_spice",
+        "name": "Urban Spice Kitchen",
+        "slug": "urban-spice",
+        "email": "manager@urbanspice.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "f109f5612dfa216837567e1ecad3b95fc53c7a8a1d7b3ee99dede72277ef4ed8",
+        "tier": "spin-review",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 5,
+        "loyaltyReward": "Free Dessert",
+        "category": "Contemporary Indian Dining",
+        "logoEmoji": "🍛",
+        "address": "12 Spice Market Road",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": [
+          {
+            "id": "sw_u1",
+            "rewardLabel": "Free Appetizer",
+            "emoji": "🥟",
+            "weight": 50
+          },
+          {
+            "id": "sw_u2",
+            "rewardLabel": "10% Off Bill",
+            "emoji": "🏷️",
+            "weight": 50
+          }
+        ]
+      }
+    ],
+    [
+      "biz_zen_tea",
+      {
+        "id": "biz_zen_tea",
+        "name": "Zenith Tea House",
+        "slug": "zen-tea",
+        "email": "manager@zentea.com",
+        "passwordHash": "d41a6919aea42f1402328faa5d019eb62f5b2e9b648803df2159c5cb681fd713",
+        "staffPinHash": "79999c9c4da29cc2d09401f81ca363b3cebcfbc4164cf10bc2d75c08dcc3caf8",
+        "tier": "loyalty-review",
+        "timezone": "Asia/Kolkata",
+        "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "googlePlaceId": "ChIJN1t_tDeuEmsRUsoyG83frY4",
+        "loyaltyTarget": 4,
+        "loyaltyReward": "Complimentary Matcha Latte & Mochi",
+        "category": "Artisanal Teahouse",
+        "logoEmoji": "🍵",
+        "address": "99 Blossom Lane",
+        "accentColor": "#0e7c66",
+        "active": true,
+        "spinWheelConfiguration": []
+      }
+    ]
+  ],
+  "customers": [
+    [
+      "biz_velvet_lounge:0000000000",
+      {
+        "id": "cust_080d1ebe167a5cbb",
+        "businessId": "biz_velvet_lounge",
+        "mobile": "0000000000",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T07:02:55.563Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_a0bfffe9f9e07652",
+          "code": "SPN-P6120",
+          "title": "1 Free Tapas Dish",
+          "type": "spin",
+          "claimedAt": "2026-09-24T07:02:55.563Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T07:02:53.894Z"
+      }
+    ],
+    [
+      "biz_urban_spice:0000000000",
+      {
+        "id": "cust_d672f47132b1a7ec",
+        "businessId": "biz_urban_spice",
+        "mobile": "0000000000",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 1,
+        "lastSpinAt": "2026-09-24T09:12:32.116Z",
+        "totalSpins": 1,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:13:01.964Z",
+        "createdAt": "2026-09-24T07:04:23.308Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000003",
+      {
+        "id": "cust_5dcfebdc46cecc4f",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000003",
+        "name": "sumit",
+        "visitCount": 2,
+        "totalVisits": 2,
+        "lastVisitAt": "2026-09-26T05:20:19.530Z",
+        "totalRewardsClaimed": 1,
+        "lastSpinAt": "2026-09-26T09:16:08.977Z",
+        "totalSpins": 2,
+        "activeVoucher": {
+          "rewardId": "rew_0fcc4d3ddea46bc0",
+          "code": "SPN-C9622",
+          "title": "20% Off Main Course",
+          "type": "spin",
+          "claimedAt": "2026-09-26T09:16:08.978Z"
+        },
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:14:14.164Z",
+        "createdAt": "2026-09-24T09:14:00.026Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000000",
+      {
+        "id": "cust_6e5046aed6f63679",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000000",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T09:24:37.759Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:24:56.879Z",
+        "createdAt": "2026-09-24T09:24:35.880Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000001",
+      {
+        "id": "cust_43742c1d4e3d8bcb",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000001",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T09:25:24.479Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:25:39.223Z",
+        "createdAt": "2026-09-24T09:25:22.280Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000002",
+      {
+        "id": "cust_cd3cda43fc78d050",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000002",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T09:26:17.959Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T09:26:16.961Z"
+      }
+    ],
+    [
+      "biz_urban_spice:0000000002",
+      {
+        "id": "cust_2828567f3a9c8724",
+        "businessId": "biz_urban_spice",
+        "mobile": "0000000002",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 1,
+        "lastSpinAt": "2026-09-24T09:27:10.960Z",
+        "totalSpins": 1,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T09:27:10.233Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000003",
+      {
+        "id": "cust_e78ffc411580649f",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000003",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T09:28:15.176Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T09:28:14.177Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000005",
+      {
+        "id": "cust_bf6071342350625a",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000005",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T09:46:57.852Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:47:01.452Z",
+        "createdAt": "2026-09-24T09:46:56.470Z"
+      }
+    ],
+    [
+      "biz_zen_tea:0000000006",
+      {
+        "id": "cust_fbe081bfb6a739f4",
+        "businessId": "biz_zen_tea",
+        "mobile": "0000000006",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T09:47:51.614Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:7021127377",
+      {
+        "id": "cust_51da20b1123e1f0b",
+        "businessId": "biz_rustic_fork",
+        "mobile": "7021127377",
+        "name": "sumit",
+        "visitCount": 2,
+        "totalVisits": 2,
+        "lastVisitAt": "2026-09-26T03:33:01.780Z",
+        "totalRewardsClaimed": 2,
+        "lastSpinAt": "2026-09-26T03:32:15.476Z",
+        "totalSpins": 2,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T09:51:36.038Z",
+        "createdAt": "2026-09-24T09:49:54.767Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000005",
+      {
+        "id": "cust_f48f32cd05cdb81e",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000005",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-24T10:09:28.874Z",
+        "totalRewardsClaimed": 1,
+        "lastSpinAt": "2026-09-24T11:10:25.703Z",
+        "totalSpins": 1,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-24T10:09:31.282Z",
+        "createdAt": "2026-09-24T10:09:26.064Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000006",
+      {
+        "id": "cust_4b656bc06d87b21c",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000006",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T11:11:41.608Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_eb79a0d1dd401c8b",
+          "code": "SPN-B3507",
+          "title": "20% Off Main Course",
+          "type": "spin",
+          "claimedAt": "2026-09-24T11:11:41.608Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T11:11:39.769Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000008",
+      {
+        "id": "cust_e3d31748cf86233d",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000008",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T11:22:44.274Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_527fcb376a187873",
+          "code": "SPN-C3611",
+          "title": "Free Craft Mocktail",
+          "type": "spin",
+          "claimedAt": "2026-09-24T11:22:44.275Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T11:22:42.259Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000010",
+      {
+        "id": "cust_14e5896bf39d07d1",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000010",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T12:02:54.165Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_5fd0ceda608d963a",
+          "code": "SPN-V4763",
+          "title": "15% Off Total Dining Bill",
+          "type": "spin",
+          "claimedAt": "2026-09-24T12:02:54.165Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T12:02:44.774Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000012",
+      {
+        "id": "cust_8252c79f73d39bc4",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000012",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T12:10:41.640Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_df4ef9656bcb2429",
+          "code": "SPN-F5297",
+          "title": "Double Loyalty Stamp Today",
+          "type": "spin",
+          "claimedAt": "2026-09-24T12:10:41.640Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T12:10:16.552Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000013",
+      {
+        "id": "cust_be85381b8680a70a",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000013",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T12:12:23.017Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000014",
+      {
+        "id": "cust_89c17d9677504312",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000014",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T12:48:03.002Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_b71817eb2476d946",
+          "code": "SPN-L4744",
+          "title": "Free Craft Mocktail",
+          "type": "spin",
+          "claimedAt": "2026-09-24T12:48:03.002Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T12:46:50.648Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000015",
+      {
+        "id": "cust_b08bd2dcb3e0a7bb",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000015",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T13:22:23.547Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_96d272ce93e44843",
+          "code": "SPN-M4813",
+          "title": "20% Off Main Course",
+          "type": "spin",
+          "claimedAt": "2026-09-24T13:22:23.547Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T12:53:04.548Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000016",
+      {
+        "id": "cust_42b53b9e3e2cf0fc",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000016",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": "2026-09-24T13:42:21.120Z",
+        "totalSpins": 1,
+        "activeVoucher": {
+          "rewardId": "rew_d022b97fefe94f4a",
+          "code": "SPN-T9344",
+          "title": "Double Loyalty Stamp Today",
+          "type": "spin",
+          "claimedAt": "2026-09-24T13:42:21.120Z"
+        },
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T13:22:57.315Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000018",
+      {
+        "id": "cust_c8f0740334f0f0d9",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000018",
+        "name": "sumit",
+        "visitCount": 0,
+        "totalVisits": 0,
+        "lastVisitAt": null,
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-24T13:42:51.729Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000001",
+      {
+        "id": "cust_af14b903a29a5032",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000001",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-26T05:21:23.057Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": true,
+        "reviewJourneyCompletedAt": "2026-09-26T05:21:38.641Z",
+        "createdAt": "2026-09-26T05:21:20.115Z"
+      }
+    ],
+    [
+      "biz_rustic_fork:0000000002",
+      {
+        "id": "cust_2d54ba897136b1a3",
+        "businessId": "biz_rustic_fork",
+        "mobile": "0000000002",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-26T05:28:45.554Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-26T05:28:42.228Z"
+      }
+    ],
+    [
+      "biz_brew_co:7021127377",
+      {
+        "id": "cust_2f3d0f3f2ba0631f",
+        "businessId": "biz_brew_co",
+        "mobile": "7021127377",
+        "name": "sumit",
+        "visitCount": 1,
+        "totalVisits": 1,
+        "lastVisitAt": "2026-09-26T08:18:38.970Z",
+        "totalRewardsClaimed": 0,
+        "lastSpinAt": null,
+        "totalSpins": 0,
+        "activeVoucher": null,
+        "reviewJourneyCompleted": false,
+        "reviewJourneyCompletedAt": null,
+        "createdAt": "2026-09-26T08:18:37.517Z"
+      }
+    ]
+  ],
+  "qrCodes": [
+    [
+      "sqr_23a4d629c7b73d05af7d8658",
+      {
+        "id": "qr_8f9efe696d59c46d",
+        "key": "sqr_23a4d629c7b73d05af7d8658",
+        "businessId": "biz_rustic_fork",
+        "type": "loyalty",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-26T10:19:20.862Z",
+        "expiresAt": "2026-09-26T10:34:20.862Z"
+      }
+    ]
+  ],
+  "rewards": [
+    [
+      "rew_a0bfffe9f9e07652",
+      {
+        "id": "rew_a0bfffe9f9e07652",
+        "businessId": "biz_velvet_lounge",
+        "customerId": "cust_080d1ebe167a5cbb",
+        "code": "SPN-P6120",
+        "title": "1 Free Tapas Dish",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T07:02:55.563Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_44cda679496a21b1",
+      {
+        "id": "rew_44cda679496a21b1",
+        "businessId": "biz_urban_spice",
+        "customerId": "cust_d672f47132b1a7ec",
+        "code": "SPN-Z6640",
+        "title": "10% Off Bill",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-24T09:12:32.116Z",
+        "redeemedAt": "2026-09-24T09:12:48.333Z",
+        "staffPinVerifiedBy": "staff_verified_Urban Spice Kitchen"
+      }
+    ],
+    [
+      "rew_e64eb97891dcf00d",
+      {
+        "id": "rew_e64eb97891dcf00d",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_5dcfebdc46cecc4f",
+        "code": "SPN-P8686",
+        "title": "20% Off Main Course",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-24T09:14:00.924Z",
+        "redeemedAt": "2026-09-24T09:14:08.252Z",
+        "staffPinVerifiedBy": "staff_verified_The Rustic Fork Bistro"
+      }
+    ],
+    [
+      "rew_abd51c722a2efb91",
+      {
+        "id": "rew_abd51c722a2efb91",
+        "businessId": "biz_urban_spice",
+        "customerId": "cust_2828567f3a9c8724",
+        "code": "SPN-K5782",
+        "title": "10% Off Bill",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-24T09:27:10.960Z",
+        "redeemedAt": "2026-09-24T09:27:14.936Z",
+        "staffPinVerifiedBy": "staff_verified_Urban Spice Kitchen"
+      }
+    ],
+    [
+      "rew_0f72d0f7a069ac75",
+      {
+        "id": "rew_0f72d0f7a069ac75",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_51da20b1123e1f0b",
+        "code": "SPN-K3945",
+        "title": "15% Off Total Dining Bill",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-24T09:52:11.359Z",
+        "redeemedAt": "2026-09-24T09:52:21.687Z",
+        "staffPinVerifiedBy": "staff_verified_The Rustic Fork Bistro"
+      }
+    ],
+    [
+      "rew_ca17a4561f74cb83",
+      {
+        "id": "rew_ca17a4561f74cb83",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_f48f32cd05cdb81e",
+        "code": "SPN-Q5746",
+        "title": "Crispy Bruschetta Platter",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-24T11:10:25.704Z",
+        "redeemedAt": "2026-09-24T11:10:42.007Z",
+        "staffPinVerifiedBy": "staff_verified_The Rustic Fork Bistro"
+      }
+    ],
+    [
+      "rew_eb79a0d1dd401c8b",
+      {
+        "id": "rew_eb79a0d1dd401c8b",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_4b656bc06d87b21c",
+        "code": "SPN-B3507",
+        "title": "20% Off Main Course",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T11:11:41.608Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_527fcb376a187873",
+      {
+        "id": "rew_527fcb376a187873",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_e3d31748cf86233d",
+        "code": "SPN-C3611",
+        "title": "Free Craft Mocktail",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T11:22:44.275Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_5fd0ceda608d963a",
+      {
+        "id": "rew_5fd0ceda608d963a",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_14e5896bf39d07d1",
+        "code": "SPN-V4763",
+        "title": "15% Off Total Dining Bill",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T12:02:54.165Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_df4ef9656bcb2429",
+      {
+        "id": "rew_df4ef9656bcb2429",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_8252c79f73d39bc4",
+        "code": "SPN-F5297",
+        "title": "Double Loyalty Stamp Today",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T12:10:41.640Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_b71817eb2476d946",
+      {
+        "id": "rew_b71817eb2476d946",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_89c17d9677504312",
+        "code": "SPN-L4744",
+        "title": "Free Craft Mocktail",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T12:48:03.002Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_96d272ce93e44843",
+      {
+        "id": "rew_96d272ce93e44843",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_b08bd2dcb3e0a7bb",
+        "code": "SPN-M4813",
+        "title": "20% Off Main Course",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T13:22:23.547Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_d022b97fefe94f4a",
+      {
+        "id": "rew_d022b97fefe94f4a",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_42b53b9e3e2cf0fc",
+        "code": "SPN-T9344",
+        "title": "Double Loyalty Stamp Today",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-24T13:42:21.120Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ],
+    [
+      "rew_90616384284f782b",
+      {
+        "id": "rew_90616384284f782b",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_51da20b1123e1f0b",
+        "code": "SPN-C8898",
+        "title": "20% Off Main Course",
+        "type": "spin",
+        "status": "redeemed",
+        "claimedAt": "2026-09-26T03:32:15.476Z",
+        "redeemedAt": "2026-09-26T03:32:56.188Z",
+        "staffPinVerifiedBy": "staff_verified_The Rustic Fork Bistro"
+      }
+    ],
+    [
+      "rew_0fcc4d3ddea46bc0",
+      {
+        "id": "rew_0fcc4d3ddea46bc0",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_5dcfebdc46cecc4f",
+        "code": "SPN-C9622",
+        "title": "20% Off Main Course",
+        "type": "spin",
+        "status": "active",
+        "claimedAt": "2026-09-26T09:16:08.978Z",
+        "redeemedAt": null,
+        "staffPinVerifiedBy": null
+      }
+    ]
+  ],
+  "reviewLogs": [
+    [
+      "rev_de8fb6980e1bd929",
+      {
+        "id": "rev_de8fb6980e1bd929",
+        "businessId": "biz_urban_spice",
+        "customerId": "cust_d672f47132b1a7ec",
+        "reviewText": "Had a fantastic experience at Urban Spice Kitchen! Loved Delicious Quality and Warm Hospitality and Quick Service. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality",
+          "Quick Service"
+        ],
+        "createdAt": "2026-09-24T09:13:01.964Z",
+        "googleReviewOpenedAt": "2026-09-24T09:13:01.991Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_1cd50e47f007dc6d",
+      {
+        "id": "rev_1cd50e47f007dc6d",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_5dcfebdc46cecc4f",
+        "reviewText": "Had a fantastic experience at The Rustic Fork Bistro! Loved Delicious Quality and Warm Hospitality and Great Value. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality",
+          "Great Value"
+        ],
+        "createdAt": "2026-09-24T09:14:14.164Z",
+        "googleReviewOpenedAt": "2026-09-24T09:14:14.198Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_6799086a01db261b",
+      {
+        "id": "rev_6799086a01db261b",
+        "businessId": "biz_zen_tea",
+        "customerId": "cust_6e5046aed6f63679",
+        "reviewText": "Had a fantastic experience at Zenith Tea House! Loved Delicious Quality and Warm Hospitality. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality"
+        ],
+        "createdAt": "2026-09-24T09:24:56.879Z",
+        "googleReviewOpenedAt": "2026-09-24T09:24:56.906Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_e4244df40190aec3",
+      {
+        "id": "rev_e4244df40190aec3",
+        "businessId": "biz_zen_tea",
+        "customerId": "cust_43742c1d4e3d8bcb",
+        "reviewText": "Had a fantastic experience at Zenith Tea House! Loved Delicious Quality and Warm Hospitality. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality"
+        ],
+        "createdAt": "2026-09-24T09:25:39.223Z",
+        "googleReviewOpenedAt": "2026-09-24T09:25:39.249Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_3a067458580a1eaf",
+      {
+        "id": "rev_3a067458580a1eaf",
+        "businessId": "biz_zen_tea",
+        "customerId": "cust_bf6071342350625a",
+        "reviewText": "Had a fantastic experience at Zenith Tea House! Loved Delicious Quality and Warm Hospitality. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality"
+        ],
+        "createdAt": "2026-09-24T09:47:01.452Z",
+        "googleReviewOpenedAt": "2026-09-24T09:47:01.480Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_8cba9d76d3c92992",
+      {
+        "id": "rev_8cba9d76d3c92992",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_51da20b1123e1f0b",
+        "reviewText": "Had a fantastic experience at The Rustic Fork Bistro! Loved Delicious Quality and Warm Hospitality and Quick Service. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality",
+          "Quick Service"
+        ],
+        "createdAt": "2026-09-24T09:51:36.038Z",
+        "googleReviewOpenedAt": "2026-09-24T09:51:36.074Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_4b5ada2d70c961f0",
+      {
+        "id": "rev_4b5ada2d70c961f0",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_f48f32cd05cdb81e",
+        "reviewText": "Had a fantastic experience at The Rustic Fork Bistro! Loved Delicious Quality and Warm Hospitality. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality"
+        ],
+        "createdAt": "2026-09-24T10:09:31.282Z",
+        "googleReviewOpenedAt": "2026-09-24T10:09:31.309Z",
+        "status": "google_opened"
+      }
+    ],
+    [
+      "rev_4817e409e2875bd8",
+      {
+        "id": "rev_4817e409e2875bd8",
+        "businessId": "biz_rustic_fork",
+        "customerId": "cust_af14b903a29a5032",
+        "reviewText": "Had a fantastic experience at The Rustic Fork Bistro! Loved Delicious Quality and Warm Hospitality. Highly recommend to anyone visiting!",
+        "rating": 5,
+        "tags": [
+          "Delicious Quality",
+          "Warm Hospitality"
+        ],
+        "createdAt": "2026-09-26T05:21:38.641Z",
+        "googleReviewOpenedAt": "2026-09-26T05:21:38.692Z",
+        "status": "google_opened"
+      }
+    ]
+  ],
+  "staffSessions": [
+    [
+      "stf_27668dca22b1a824a1ce533bcc2f7b2c",
+      {
+        "token": "stf_27668dca22b1a824a1ce533bcc2f7b2c",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-26T03:28:16.746Z",
+        "expiresAt": "2026-09-27T03:28:16.746Z"
+      }
+    ],
+    [
+      "stf_b158856136d9816ed0ef8f15de25e644",
+      {
+        "token": "stf_b158856136d9816ed0ef8f15de25e644",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-26T05:54:11.408Z",
+        "expiresAt": "2026-09-27T05:54:11.408Z"
+      }
+    ],
+    [
+      "stf_a4f484003d38e5447d1970aad610d454",
+      {
+        "token": "stf_a4f484003d38e5447d1970aad610d454",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-26T06:05:39.308Z",
+        "expiresAt": "2026-09-27T06:05:39.308Z"
+      }
+    ],
+    [
+      "stf_afae5eb4c0d5a475ccff54db0a1b5be5",
+      {
+        "token": "stf_afae5eb4c0d5a475ccff54db0a1b5be5",
+        "businessId": "biz_brew_co",
+        "tier": "loyalty",
+        "createdAt": "2026-09-26T08:17:23.596Z",
+        "expiresAt": "2026-09-27T08:17:23.596Z"
+      }
+    ],
+    [
+      "stf_93fa25eef7bd7a7a3f7151be1d251feb",
+      {
+        "token": "stf_93fa25eef7bd7a7a3f7151be1d251feb",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-26T09:15:50.522Z",
+        "expiresAt": "2026-09-27T09:15:50.522Z"
+      }
+    ]
+  ]
+}

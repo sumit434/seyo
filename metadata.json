@@ -1,0 +1,6 @@
+{
+  "name": "SEYO — Enterprise Customer Engagement Platform",
+  "description": "Enterprise QR & NFC customer engagement platform with Spin & Win, Digital Loyalty, and AI Google Review Booster.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
