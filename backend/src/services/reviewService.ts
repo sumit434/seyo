@@ -3,6 +3,7 @@ import { db, IReviewLog } from '../config/db.js';
 import { generateSecureKey } from '../utils/crypto.js';
 import { getBusinessById } from './businessService.js';
 import { getCustomerById } from './customerService.js';
+import { recordOfferMetric } from './offerService.js';
 
 export async function generateAIReviewSuggestions(
   businessName: string,
@@ -86,6 +87,9 @@ export function persistReview(
   // Authoritatively update customer review completion status
   customer.reviewJourneyCompleted = true;
   customer.reviewJourneyCompletedAt = new Date().toISOString();
+
+  // Record tracker metric on active offer
+  recordOfferMetric(businessId, 'reviewsPersisted');
 
   db.saveToDisk();
 

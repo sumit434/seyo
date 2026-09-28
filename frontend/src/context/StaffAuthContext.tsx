@@ -8,6 +8,7 @@ interface StaffAuthData {
   isLoading: boolean;
   error: string | null;
   login: (email: string, password: string) => Promise<boolean>;
+  setSession: (token: string, business: any) => void;
   logout: () => void;
   clearError: () => void;
 }
@@ -55,6 +56,11 @@ export const StaffAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     }
   }, []);
 
+  const setSession = useCallback((newToken: string, newBusiness: any) => {
+    setToken(newToken);
+    setBusiness(newBusiness);
+  }, []);
+
   const logout = useCallback(() => {
     setToken(null);
     setBusiness(null);
@@ -72,6 +78,7 @@ export const StaffAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         isLoading,
         error,
         login,
+        setSession,
         logout,
         clearError,
       }}

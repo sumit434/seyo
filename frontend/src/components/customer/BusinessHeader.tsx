@@ -11,8 +11,16 @@ export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ business }) => {
     <div className="w-full flex flex-col items-center text-center pb-4 pt-1">
       {/* Brand Icon Badge */}
       <div className="relative mb-3">
-        <div className="w-16 h-16 rounded-3xl bg-brand-soft border-2 border-brand/20 flex items-center justify-center text-3xl shadow-sm">
-          {business.logoEmoji || '🍽️'}
+        <div className="w-16 h-16 rounded-3xl bg-brand-soft border-2 border-brand/20 flex items-center justify-center text-3xl shadow-sm overflow-hidden">
+          {business.logoUrl ? (
+            <img
+              src={business.logoUrl}
+              alt={business.name}
+              className="w-full h-full object-cover rounded-3xl"
+            />
+          ) : (
+            <span>{business.logoEmoji || '🍽️'}</span>
+          )}
         </div>
         <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-brand text-white flex items-center justify-center text-[10px] ring-2 ring-white">
           <Sparkles className="w-3.5 h-3.5" />

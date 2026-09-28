@@ -12,15 +12,33 @@ import {
   Store,
   ChevronRight,
   Lock,
+  Mail,
+  Clock,
+  Copy,
+  Check,
+  Zap,
 } from 'lucide-react';
-import { customerApi, BusinessConfig } from '../services/apiServices.js';
+import { customerApi, onboardingApi, BusinessConfig } from '../services/apiServices.js';
 import { Loading } from '../components/common/Loading.js';
+import { Button } from '../components/common/Button.js';
 
 export const MerchantDirectoryPage: React.FC = () => {
   const [businesses, setBusinesses] = useState<BusinessConfig[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  // Onboarding Magic Link Simulator State
+  const [simTier, setSimTier] = useState<'combined' | 'spin' | 'loyalty' | 'review'>('combined');
+  const [simEmail, setSimEmail] = useState('manager@bellavistacafe.com');
+  const [simName, setSimName] = useState('Bella Vista Café & Rooftop');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [magicLinkResult, setMagicLinkResult] = useState<{
+    token: string;
+    onboardingUrl: string;
+    expiresAt: string;
+  } | null>(null);
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const fetchMerchants = () => {
     customerApi
       .getAllBusinesses()
       .then(res => {
@@ -30,7 +48,40 @@ export const MerchantDirectoryPage: React.FC = () => {
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchMerchants();
   }, []);
+
+  const handleSimulatePayment = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!simEmail.trim()) return;
+
+    setIsGenerating(true);
+    try {
+      const res = await onboardingApi.generateToken(simEmail.trim(), simTier, simName.trim());
+      if (res.success) {
+        setMagicLinkResult({
+          token: res.token,
+          onboardingUrl: res.onboardingUrl,
+          expiresAt: res.expiresAt,
+        });
+      }
+    } catch {
+      // Error handling
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleCopyMagicLink = () => {
+    if (!magicLinkResult) return;
+    const fullUrl = `${window.location.origin}${magicLinkResult.onboardingUrl}`;
+    navigator.clipboard.writeText(fullUrl);
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2000);
+  };
 
   return (
     <div className="min-h-dvh bg-surface-soft text-ink flex flex-col selection:bg-brand-soft selection:text-brand-dark">
@@ -79,17 +130,134 @@ export const MerchantDirectoryPage: React.FC = () => {
           SEYO transforms QR and NFC touchpoints into high-conversion dining and retail experiences.
           Guaranteed Spin & Win, Digital Loyalty tracking, and AI Google Review boosters—all authoritative, multi-tenant, and zero-drop.
         </p>
+
+        {/* POST-PAYMENT ONBOARDING MAGIC LINK SIMULATOR */}
+        <div className="mt-8 max-w-3xl mx-auto bg-white border-2 border-brand/30 rounded-3xl p-6 shadow-sm text-left">
+          <div className="flex items-center justify-between gap-3 mb-3 pb-3 border-b border-line">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl bg-brand text-white flex items-center justify-center">
+                <Zap className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-black text-ink">Post-Payment Onboarding Magic Link Simulator</h3>
+                <span className="text-[11px] text-muted">Simulate Stripe/Payment Gateway Webhook & Token Issuance</span>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-200">
+              15-Min Security TTL
+            </span>
+          </div>
+
+          <form onSubmit={handleSimulatePayment} className="flex flex-col gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label className="block text-[11px] font-bold text-ink mb-1">Subscription Tier</label>
+                <select
+                  value={simTier}
+                  onChange={(e) => setSimTier(e.target.value as any)}
+                  className="w-full text-xs font-semibold p-2.5 rounded-xl border border-line bg-surface-soft"
+                >
+                  <option value="combined">Combined Suite</option>
+                  <option value="spin">Spin & Win Tier</option>
+                  <option value="loyalty">Digital Loyalty Tier</option>
+                  <option value="review">AI Review Booster</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-bold text-ink mb-1">Merchant Email</label>
+                <input
+                  type="email"
+                  value={simEmail}
+                  onChange={(e) => setSimEmail(e.target.value)}
+                  placeholder="merchant@domain.com"
+                  className="w-full text-xs font-semibold p-2.5 rounded-xl border border-line bg-surface-soft"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-bold text-ink mb-1">Suggested Business Name</label>
+                <input
+                  type="text"
+                  value={simName}
+                  onChange={(e) => setSimName(e.target.value)}
+                  placeholder="e.g. Bella Vista Café"
+                  className="w-full text-xs font-semibold p-2.5 rounded-xl border border-line bg-surface-soft"
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-end pt-1">
+              <Button type="submit" disabled={isGenerating} className="py-2.5 px-4 text-xs font-bold">
+                {isGenerating ? 'Generating Magic Link...' : 'Simulate Payment & Create Magic Link'}
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              </Button>
+            </div>
+          </form>
+
+          {/* Generated Magic Link Box */}
+          {magicLinkResult && (
+            <div className="mt-4 p-4 bg-brand-soft/60 border border-brand/30 rounded-2xl flex flex-col gap-3">
+              <div className="flex items-center justify-between text-xs font-bold text-brand-dark">
+                <div className="flex items-center gap-1.5">
+                  <Mail className="w-4 h-4 text-brand" />
+                  <span>Onboarding Magic Link Generated!</span>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] text-muted">
+                  <Clock className="w-3 h-3 text-brand" />
+                  <span>Valid for 15 minutes</span>
+                </div>
+              </div>
+
+              <div className="p-2.5 bg-white rounded-xl border border-line text-xs font-mono text-ink truncate select-all">
+                {`${window.location.origin}${magicLinkResult.onboardingUrl}`}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="secondary"
+                  onClick={handleCopyMagicLink}
+                  className="py-1.5 px-3 text-xs flex-1 h-auto"
+                >
+                  {copiedLink ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 mr-1 text-brand" />
+                      <span>Copied to Clipboard!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5 mr-1" />
+                      <span>Copy Magic Link</span>
+                    </>
+                  )}
+                </Button>
+
+                <Link
+                  to={magicLinkResult.onboardingUrl}
+                  className="btn-primary py-1.5 px-4 text-xs font-bold flex-1 text-center inline-flex items-center justify-center gap-1"
+                >
+                  <span>Open Setup Wizard</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </section>
 
       {/* Merchants Grid */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-xl font-black text-ink">Explore Test Establishments</h2>
+            <h2 className="text-xl font-black text-ink">Active Establishments ({businesses.length})</h2>
             <p className="text-xs text-muted">
               Choose a merchant to test its customer journey or launch its staff terminal.
             </p>
           </div>
+          <Button variant="secondary" onClick={fetchMerchants} className="py-1.5 px-3 text-xs h-auto">
+            Refresh List
+          </Button>
         </div>
 
         {isLoading ? (
@@ -120,8 +288,12 @@ export const MerchantDirectoryPage: React.FC = () => {
                   <div>
                     {/* Top Row: Icon & Tier Tag */}
                     <div className="flex items-start justify-between gap-3 mb-3">
-                      <div className="w-14 h-14 rounded-2xl bg-brand-soft border border-brand/20 flex items-center justify-center text-3xl shadow-xs">
-                        {b.logoEmoji || '🏢'}
+                      <div className="w-14 h-14 rounded-2xl bg-brand-soft border border-brand/20 flex items-center justify-center text-3xl shadow-xs overflow-hidden">
+                        {b.logoUrl ? (
+                          <img src={b.logoUrl} alt={b.name} className="w-full h-full object-cover rounded-2xl" />
+                        ) : (
+                          <span>{b.logoEmoji || '🏢'}</span>
+                        )}
                       </div>
                       <span
                         className={`text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full ${

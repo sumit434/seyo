@@ -19,3 +19,19 @@ export function listAllBusinesses(): Array<Omit<IBusiness, 'passwordHash' | 'sta
     .filter(b => b.active)
     .map(({ passwordHash, staffPinHash, ...rest }) => rest);
 }
+
+export function updateBusinessBranding(
+  businessId: string,
+  branding: { logoUrl?: string; logoEmoji?: string; accentColor?: string; address?: string }
+): IBusiness | null {
+  const business = db.businesses.get(businessId);
+  if (!business || !business.active) return null;
+
+  if (branding.logoUrl !== undefined) business.logoUrl = branding.logoUrl;
+  if (branding.logoEmoji !== undefined) business.logoEmoji = branding.logoEmoji;
+  if (branding.accentColor !== undefined) business.accentColor = branding.accentColor;
+  if (branding.address !== undefined) business.address = branding.address;
+
+  db.saveToDisk();
+  return business;
+}

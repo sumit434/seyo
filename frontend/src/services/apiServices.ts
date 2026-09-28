@@ -1,12 +1,20 @@
 import { request } from './api.js';
 
+export interface SpinWheelSlice {
+  id: string;
+  rewardLabel: string;
+  emoji: string;
+  weight: number;
+}
+
 export interface BusinessConfig {
   id: string;
   name: string;
   slug: string;
-  tier: 'combined' | 'spin' | 'loyalty' | 'review' | 'spin-review' | 'loyalty-review';
+  tier: 'combined' | 'spin' | 'loyalty' | 'review';
   category: string;
   logoEmoji: string;
+  logoUrl?: string;
   address: string;
   accentColor: string;
   timezone: string;
@@ -19,6 +27,38 @@ export interface BusinessConfig {
     emoji: string;
     weight: number;
   }>;
+}
+
+export type OfferStatus = 'no_offer' | 'draft' | 'active' | 'completed' | 'cancelled';
+
+export interface OfferData {
+  id: string;
+  businessId: string;
+  title: string;
+  description?: string;
+  tier: 'combined' | 'spin' | 'loyalty' | 'review';
+  status: OfferStatus;
+  createdAt: string;
+  activatedAt: string | null;
+  expiresAt: string | null;
+  cancelledAt: string | null;
+  durationDays: number;
+  spinWheelConfiguration?: Array<{
+    id: string;
+    rewardLabel: string;
+    emoji: string;
+    weight: number;
+  }>;
+  loyaltyTarget?: number;
+  loyaltyReward?: string;
+  metrics: {
+    scans: number;
+    identifiedGuests: number;
+    rewardsIssued: number;
+    rewardsRedeemed: number;
+    reviewsPrompted: number;
+    reviewsPersisted: number;
+  };
 }
 
 export interface CustomerStatus {
@@ -188,11 +228,18 @@ export const staffApi = {
     return request<{
       success: boolean;
       business: BusinessConfig;
+      activeOffer: OfferData | null;
+      offers: OfferData[];
       stats: {
         totalCustomers: number;
         totalRewardsRedeemed: number;
         activeVouchersWaiting: number;
         totalReviewsPersisted: number;
+        activeOfferScans?: number;
+        activeOfferIdentified?: number;
+        activeOfferRewardsIssued?: number;
+        activeOfferRewardsRedeemed?: number;
+        activeOfferReviewsPersisted?: number;
       };
       recentRewards: any[];
       recentReviews: any[];
@@ -213,3 +260,116 @@ export const staffApi = {
     });
   },
 };
+
+export const onboardingApi = {
+  generateToken(email: string, tier: 'combined' | 'spin' | 'loyalty' | 'review', businessName?: string) {
+    return request<{
+      success: boolean;
+      token: string;
+      onboardingUrl: string;
+      expiresAt: string;
+      tier: string;
+      message: string;
+    }>('/onboarding/generate-token', {
+      method: 'POST',
+      body: JSON.stringify({ email, tier, businessName }),
+    });
+  },
+
+  validateToken(token: string) {
+    return request<{
+      success: boolean;
+      tokenData: {
+        email: string;
+        tier: 'combined' | 'spin' | 'loyalty' | 'review';
+        businessName?: string;
+        expiresAt: string;
+      };
+    }>(`/onboarding/validate/${token}`);
+  },
+
+  complete(token: string, businessData: any) {
+    return request<{
+      success: boolean;
+      message: string;
+      business: BusinessConfig;
+      sessionToken: string;
+    }>('/onboarding/complete', {
+      method: 'POST',
+      body: JSON.stringify({ token, ...businessData }),
+    });
+  },
+};
+
+export const offerApi = {
+  getCurrent(businessId: string) {
+    return request<{
+      success: boolean;
+      activeOffer: OfferData | null;
+      offers: OfferData[];
+    }>(`/offers/current/${businessId}`);
+  },
+
+  createDraft(token: string, draftData: Partial<OfferData>) {
+    return request<{
+      success: boolean;
+      offer: OfferData;
+      message: string;
+    }>('/offers/draft', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(draftData),
+    });
+  },
+
+  updateDraft(token: string, offerId: string, draftData: Partial<OfferData>) {
+    return request<{
+      success: boolean;
+      offer: OfferData;
+      message: string;
+    }>(`/offers/${offerId}`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(draftData),
+    });
+  },
+
+  activate(token: string, offerId: string, confirmImmutability: boolean) {
+    return request<{
+      success: boolean;
+      offer: OfferData;
+      message: string;
+    }>('/offers/activate', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ offerId, confirmImmutability }),
+    });
+  },
+
+  cancel(token: string, offerId: string) {
+    return request<{
+      success: boolean;
+      offer: OfferData;
+      message: string;
+    }>('/offers/cancel', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ offerId }),
+    });
+  },
+};
+
+export const brandingApi = {
+  updateBranding(token: string, businessId: string, branding: { logoUrl?: string; logoEmoji?: string; accentColor?: string; address?: string }) {
+    return request<{
+      success: boolean;
+      business: BusinessConfig;
+      message: string;
+    }>(`/business/${businessId}/branding`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(branding),
+    });
+  },
+};
+

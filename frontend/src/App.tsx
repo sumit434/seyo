@@ -5,6 +5,7 @@ import { MerchantDirectoryPage } from './pages/MerchantDirectoryPage.js';
 import { CustomerEngagementPage } from './pages/CustomerEngagementPage.js';
 import { StaffLoginPage } from './pages/StaffLoginPage.js';
 import { StaffTerminalPage } from './pages/StaffTerminalPage.js';
+import { MerchantOnboardingPage } from './pages/MerchantOnboardingPage.js';
 
 export default function App() {
   return (
@@ -14,16 +15,14 @@ export default function App() {
           {/* Landing & Merchant Showcase */}
           <Route path="/" element={<MerchantDirectoryPage />} />
 
+          {/* Post-Payment Onboarding Magic Link Wizard */}
+          <Route path="/onboarding/:token" element={<MerchantOnboardingPage />} />
+          <Route path="/onboarding" element={<MerchantOnboardingPage />} />
+
           {/* Customer Routes (Section 31 & Master Spec) */}
           {/* Combined Suite */}
           <Route path="/c/:slug/v" element={<CustomerEngagementPage routeModule="combined" />} />
           <Route path="/c/:slug" element={<CustomerEngagementPage routeModule="combined" />} />
-
-          {/* Spin + Review Custom Tier */}
-          <Route path="/c/:slug/spin-review" element={<CustomerEngagementPage routeModule="spin-review" />} />
-
-          {/* Loyalty + Review Custom Tier */}
-          <Route path="/c/:slug/loyalty-review" element={<CustomerEngagementPage routeModule="loyalty-review" />} />
 
           {/* Spin & Win Standalone */}
           <Route path="/c/:slug/spin" element={<CustomerEngagementPage routeModule="spin" />} />

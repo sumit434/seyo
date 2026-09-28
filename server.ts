@@ -9,7 +9,8 @@ dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
+// Dev server must always bind to port 3000 in AI Studio
+const PORT = 3001;
 const isProd = process.env.NODE_ENV === 'production';
 
 async function startServer() {

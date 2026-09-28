@@ -15,7 +15,7 @@ export interface IBusiness {
   email: string;
   passwordHash: string;
   staffPinHash: string;
-  tier: 'combined' | 'spin' | 'loyalty' | 'review' | 'spin-review' | 'loyalty-review';
+  tier: 'combined' | 'spin' | 'loyalty' | 'review';
   timezone: string;
   googleReviewUrl: string;
   googlePlaceId: string;
@@ -25,8 +25,49 @@ export interface IBusiness {
   active: boolean;
   category: string;
   logoEmoji: string;
+  logoUrl?: string; // Uploaded custom brand logo image (base64 or URL)
   address: string;
   accentColor: string;
+  createdAt?: string;
+}
+
+export type OfferStatus = 'no_offer' | 'draft' | 'active' | 'completed' | 'cancelled';
+
+export interface IOffer {
+  id: string;
+  businessId: string;
+  title: string;
+  description?: string;
+  tier: 'combined' | 'spin' | 'loyalty' | 'review';
+  status: OfferStatus;
+  createdAt: string;
+  activatedAt: string | null;
+  expiresAt: string | null;
+  cancelledAt: string | null;
+  durationDays: number;
+  spinWheelConfiguration?: SpinWheelSlice[];
+  loyaltyTarget?: number;
+  loyaltyReward?: string;
+  metrics: {
+    scans: number;
+    identifiedGuests: number;
+    rewardsIssued: number;
+    rewardsRedeemed: number;
+    reviewsPrompted: number;
+    reviewsPersisted: number;
+  };
+}
+
+export interface IOnboardingToken {
+  token: string;
+  email: string;
+  tier: 'combined' | 'spin' | 'loyalty' | 'review';
+  businessName?: string;
+  status: 'pending' | 'completed' | 'expired';
+  createdAt: string;
+  expiresAt: string; // 15-minute TTL
+  completedAt?: string | null;
+  businessId?: string | null;
 }
 
 export interface ICustomer {
@@ -56,7 +97,7 @@ export interface IDynamicQR {
   id: string;
   key: string;
   businessId: string;
-  type: 'spin' | 'loyalty' | 'combined' | 'spin-review' | 'loyalty-review' | 'review';
+  type: 'spin' | 'loyalty' | 'combined';
   isUsed: boolean;
   usedBy: string | null; // CustomerId
   createdAt: string;
@@ -104,6 +145,8 @@ class MemoryDB {
   rewards: Map<string, IReward> = new Map(); // key: reward id
   reviewLogs: Map<string, IReviewLog> = new Map(); // key: review id
   staffSessions: Map<string, IStaffSession> = new Map(); // key: session token
+  offers: Map<string, IOffer> = new Map(); // key: offer id
+  onboardingTokens: Map<string, IOnboardingToken> = new Map(); // key: onboarding token
 
   private dataFilePath: string = path.resolve(process.cwd(), '.seyo_db_store.json');
 
@@ -120,6 +163,8 @@ class MemoryDB {
         rewards: Array.from(this.rewards.entries()),
         reviewLogs: Array.from(this.reviewLogs.entries()),
         staffSessions: Array.from(this.staffSessions.entries()),
+        offers: Array.from(this.offers.entries()),
+        onboardingTokens: Array.from(this.onboardingTokens.entries()),
       };
       fs.writeFileSync(this.dataFilePath, JSON.stringify(payload, null, 2));
     } catch {
@@ -138,13 +183,15 @@ class MemoryDB {
         if (data.rewards) this.rewards = new Map(data.rewards);
         if (data.reviewLogs) this.reviewLogs = new Map(data.reviewLogs);
         if (data.staffSessions) this.staffSessions = new Map(data.staffSessions);
+        if (data.offers) this.offers = new Map(data.offers);
+        if (data.onboardingTokens) this.onboardingTokens = new Map(data.onboardingTokens);
       }
     } catch {
       // In case of corrupt file or parse error, proceed with fresh maps
     }
   }
 
-  // Periodic TTL cleanup for expired QR codes and staff sessions
+  // Periodic TTL cleanup for expired QR codes, onboarding tokens, and staff sessions
   cleanExpired() {
     const now = new Date().toISOString();
     for (const [k, qr] of this.qrCodes.entries()) {
@@ -155,6 +202,17 @@ class MemoryDB {
     for (const [t, s] of this.staffSessions.entries()) {
       if (s.expiresAt < now) {
         this.staffSessions.delete(t);
+      }
+    }
+    for (const [tok, onb] of this.onboardingTokens.entries()) {
+      if (onb.expiresAt < now && onb.status === 'pending') {
+        onb.status = 'expired';
+      }
+    }
+    // Check offer natural expirations
+    for (const [, off] of this.offers.entries()) {
+      if (off.status === 'active' && off.expiresAt && off.expiresAt < now) {
+        off.status = 'completed';
       }
     }
   }

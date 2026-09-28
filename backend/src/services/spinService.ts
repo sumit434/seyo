@@ -3,6 +3,7 @@ import { isCompletedToday } from '../utils/timezone.js';
 import { getBusinessById } from './businessService.js';
 import { getCustomerById } from './customerService.js';
 import { issueReward } from './rewardService.js';
+import { recordOfferMetric } from './offerService.js';
 
 export function pickWinningSlice(slices: Array<{ id: string; rewardLabel: string; weight: number }>) {
   if (!slices || slices.length === 0) {
@@ -30,7 +31,7 @@ export function executeSpin(businessId: string, customerId: string) {
     return { success: false, statusCode: 404, message: 'Business not found' };
   }
 
-  if (business.tier !== 'spin' && business.tier !== 'combined' && business.tier !== 'spin-review') {
+  if (business.tier !== 'spin' && business.tier !== 'combined') {
     return {
       success: false,
       statusCode: 403,
@@ -62,6 +63,7 @@ export function executeSpin(businessId: string, customerId: string) {
 
   // Issue real-world Reward record
   const reward = issueReward(businessId, customerId, slice.rewardLabel, 'spin');
+  recordOfferMetric(businessId, 'rewardsIssued');
 
   db.saveToDisk();
 

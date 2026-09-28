@@ -3,6 +3,15 @@ import { generateSecureKey, generateVoucherCode } from '../utils/crypto.js';
 import { verifyPin } from '../utils/pin.js';
 import { getBusinessById } from './businessService.js';
 import { getCustomerById } from './customerService.js';
+import { recordOfferMetric } from './offerService.js';
+
+// Brute-force protection: max 5 failed attempts per business in 15 minutes
+interface PinAttemptRecord {
+  failedAttempts: number;
+  lockedUntil: number | null;
+}
+
+const pinFailureTracker = new Map<string, PinAttemptRecord>();
 
 export function issueReward(
   businessId: string,
@@ -60,15 +69,40 @@ export function redeemRewardWithPin(
     return { success: false, statusCode: 404, message: 'Business not found.' };
   }
 
+  // Check brute-force lockout
+  const nowMs = Date.now();
+  const attemptRecord = pinFailureTracker.get(businessId);
+  if (attemptRecord && attemptRecord.lockedUntil && attemptRecord.lockedUntil > nowMs) {
+    const remainingSeconds = Math.ceil((attemptRecord.lockedUntil - nowMs) / 1000);
+    return {
+      success: false,
+      statusCode: 429,
+      message: `PIN_RATE_LIMITED: Too many incorrect PIN attempts. Terminal PIN verification is temporarily locked for ${remainingSeconds} more seconds for fraud protection.`,
+    };
+  }
+
   // Verify Staff PIN
   const isPinValid = verifyPin(pin, business.staffPinHash);
   if (!isPinValid) {
+    const current = attemptRecord || { failedAttempts: 0, lockedUntil: null };
+    current.failedAttempts += 1;
+    if (current.failedAttempts >= 5) {
+      current.lockedUntil = nowMs + 5 * 60 * 1000; // 5-minute lockout
+    }
+    pinFailureTracker.set(businessId, current);
+
+    const attemptsLeft = Math.max(0, 5 - current.failedAttempts);
     return {
       success: false,
       statusCode: 401,
-      message: 'Invalid Staff PIN. Please ask an authorized staff member to enter their PIN.',
+      message: current.lockedUntil
+        ? 'PIN_LOCKED: Too many failed PIN attempts. PIN verification is locked for 5 minutes.'
+        : `Invalid Staff PIN. ${attemptsLeft} attempts remaining before temporary lockout.`,
     };
   }
+
+  // Reset failed PIN attempts on successful verification
+  pinFailureTracker.delete(businessId);
 
   // Find the reward
   let targetReward: IReward | null = null;
@@ -116,6 +150,9 @@ export function redeemRewardWithPin(
       customer.visitCount = 0;
     }
   }
+
+  // Record tracker metric on active offer
+  recordOfferMetric(businessId, 'rewardsRedeemed');
 
   db.saveToDisk();
 

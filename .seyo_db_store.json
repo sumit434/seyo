@@ -760,16 +760,224 @@
   ],
   "qrCodes": [
     [
-      "sqr_23a4d629c7b73d05af7d8658",
+      "sqr_dc55670cd4756da48a328800",
       {
-        "id": "qr_8f9efe696d59c46d",
-        "key": "sqr_23a4d629c7b73d05af7d8658",
+        "id": "qr_50ca91d90ee5d04c",
+        "key": "sqr_dc55670cd4756da48a328800",
         "businessId": "biz_rustic_fork",
         "type": "loyalty",
         "isUsed": false,
         "usedBy": null,
-        "createdAt": "2026-09-26T10:19:20.862Z",
-        "expiresAt": "2026-09-26T10:34:20.862Z"
+        "createdAt": "2026-09-26T12:04:23.725Z",
+        "expiresAt": "2026-09-26T12:19:23.725Z"
+      }
+    ],
+    [
+      "sqr_718ecf67181e8d3023dcafc9",
+      {
+        "id": "qr_28a1e64ed2d31b72",
+        "key": "sqr_718ecf67181e8d3023dcafc9",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T08:55:34.425Z",
+        "expiresAt": "2026-09-28T09:10:34.425Z"
+      }
+    ],
+    [
+      "sqr_26a018bb2a91b58f2b6759a5",
+      {
+        "id": "qr_733d08fac69ea6ac",
+        "key": "sqr_26a018bb2a91b58f2b6759a5",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T08:55:34.434Z",
+        "expiresAt": "2026-09-28T09:10:34.434Z"
+      }
+    ],
+    [
+      "sqr_20585dd4e3f50a5003d55adb",
+      {
+        "id": "qr_98e94db82f5cbb91",
+        "key": "sqr_20585dd4e3f50a5003d55adb",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:06:02.293Z",
+        "expiresAt": "2026-09-28T09:21:02.293Z"
+      }
+    ],
+    [
+      "sqr_33102ddc512fd5bc896381f3",
+      {
+        "id": "qr_b8b3a99d802103c0",
+        "key": "sqr_33102ddc512fd5bc896381f3",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:06:02.301Z",
+        "expiresAt": "2026-09-28T09:21:02.301Z"
+      }
+    ],
+    [
+      "sqr_af93fb3e450375f5a2ad157a",
+      {
+        "id": "qr_e07ba12dd25d573b",
+        "key": "sqr_af93fb3e450375f5a2ad157a",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:08:59.085Z",
+        "expiresAt": "2026-09-28T09:23:59.085Z"
+      }
+    ],
+    [
+      "sqr_c206a6a114a7ef05658c41fe",
+      {
+        "id": "qr_b79f9bcc6503327c",
+        "key": "sqr_c206a6a114a7ef05658c41fe",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:08:59.092Z",
+        "expiresAt": "2026-09-28T09:23:59.092Z"
+      }
+    ],
+    [
+      "sqr_1d417132695f50f618d2bc5c",
+      {
+        "id": "qr_f72a21684ddcf6da",
+        "key": "sqr_1d417132695f50f618d2bc5c",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:11:01.409Z",
+        "expiresAt": "2026-09-28T09:26:01.409Z"
+      }
+    ],
+    [
+      "sqr_084f7c9efb0d15638469a1bd",
+      {
+        "id": "qr_c21902a2501dde76",
+        "key": "sqr_084f7c9efb0d15638469a1bd",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:11:52.946Z",
+        "expiresAt": "2026-09-28T09:26:52.946Z"
+      }
+    ],
+    [
+      "sqr_f5e906c94a4be48bd617096f",
+      {
+        "id": "qr_be486caf87b54cd0",
+        "key": "sqr_f5e906c94a4be48bd617096f",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:12:19.110Z",
+        "expiresAt": "2026-09-28T09:27:19.110Z"
+      }
+    ],
+    [
+      "sqr_65671b480edff24d8fb7c2f8",
+      {
+        "id": "qr_76d26d677d93b0d2",
+        "key": "sqr_65671b480edff24d8fb7c2f8",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:12:19.114Z",
+        "expiresAt": "2026-09-28T09:27:19.114Z"
+      }
+    ],
+    [
+      "sqr_d29343c656a0e162a4828906",
+      {
+        "id": "qr_ca0aee027df0ca3d",
+        "key": "sqr_d29343c656a0e162a4828906",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:12:43.360Z",
+        "expiresAt": "2026-09-28T09:27:43.360Z"
+      }
+    ],
+    [
+      "sqr_014bffb1b80e9bc3a2df8ded",
+      {
+        "id": "qr_d1ca968643008283",
+        "key": "sqr_014bffb1b80e9bc3a2df8ded",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:13:13.329Z",
+        "expiresAt": "2026-09-28T09:28:13.329Z"
+      }
+    ],
+    [
+      "sqr_d451b38a59ebcf5d172093b9",
+      {
+        "id": "qr_35ee775f043043d7",
+        "key": "sqr_d451b38a59ebcf5d172093b9",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:13:32.342Z",
+        "expiresAt": "2026-09-28T09:28:32.342Z"
+      }
+    ],
+    [
+      "sqr_0b6f0dafab83ddab555a5bc9",
+      {
+        "id": "qr_966d4b2fa2b7ff88",
+        "key": "sqr_0b6f0dafab83ddab555a5bc9",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:14:21.135Z",
+        "expiresAt": "2026-09-28T09:29:21.135Z"
+      }
+    ],
+    [
+      "sqr_b27341e08d4c96d8cd15eb48",
+      {
+        "id": "qr_93cd45f5ff05ff74",
+        "key": "sqr_b27341e08d4c96d8cd15eb48",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:14:47.173Z",
+        "expiresAt": "2026-09-28T09:29:47.173Z"
+      }
+    ],
+    [
+      "sqr_855c3a7c23ac9deef3e22235",
+      {
+        "id": "qr_8fd2487acf59e582",
+        "key": "sqr_855c3a7c23ac9deef3e22235",
+        "businessId": "biz_rustic_fork",
+        "type": "combined",
+        "isUsed": false,
+        "usedBy": null,
+        "createdAt": "2026-09-28T09:16:24.149Z",
+        "expiresAt": "2026-09-28T09:31:24.149Z"
       }
     ]
   ],
@@ -1190,6 +1398,53 @@
         "tier": "combined",
         "createdAt": "2026-09-26T09:15:50.522Z",
         "expiresAt": "2026-09-27T09:15:50.522Z"
+      }
+    ],
+    [
+      "stf_9a9191497d4d5f12d81290eecbbf4ea4",
+      {
+        "token": "stf_9a9191497d4d5f12d81290eecbbf4ea4",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-28T08:55:34.385Z",
+        "expiresAt": "2026-09-29T08:55:34.385Z"
+      }
+    ],
+    [
+      "stf_f171ec45fb6385e78bedb78a385d9c38",
+      {
+        "token": "stf_f171ec45fb6385e78bedb78a385d9c38",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-28T09:06:02.257Z",
+        "expiresAt": "2026-09-29T09:06:02.257Z"
+      }
+    ],
+    [
+      "stf_6e68187a5cb4255c7439482ccbe44ceb",
+      {
+        "token": "stf_6e68187a5cb4255c7439482ccbe44ceb",
+        "businessId": "biz_rustic_fork",
+        "tier": "combined",
+        "createdAt": "2026-09-28T09:08:59.050Z",
+        "expiresAt": "2026-09-29T09:08:59.050Z"
+      }
+    ]
+  ],
+  "offers": [],
+  "onboardingTokens": [
+    [
+      "onb_17d3aee580ff30b8d1356bfa319c1dfb0f3f3f0e",
+      {
+        "token": "onb_17d3aee580ff30b8d1356bfa319c1dfb0f3f3f0e",
+        "email": "manager@bellavistacafe.com",
+        "tier": "combined",
+        "businessName": "Bella Vista Café & Rooftop",
+        "status": "pending",
+        "createdAt": "2026-09-28T08:55:23.126Z",
+        "expiresAt": "2026-09-28T09:10:23.126Z",
+        "completedAt": null,
+        "businessId": null
       }
     ]
   ]

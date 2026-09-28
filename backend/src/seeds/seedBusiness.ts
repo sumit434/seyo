@@ -32,7 +32,6 @@ export function seedDatabase() {
         { id: 'sw_4', rewardLabel: '15% Off Total Dining Bill', emoji: '🎟️', weight: 15 },
         { id: 'sw_5', rewardLabel: 'Double Loyalty Stamp Today', emoji: '⭐', weight: 7 },
         { id: 'sw_6', rewardLabel: 'Free Gelato Trio', emoji: '🍨', weight: 3 },
-        { id: 'sw_7', rewardLabel: 'Free burger', emoji: '🍔', weight: 3 },
       ],
     },
     {
@@ -107,53 +106,41 @@ export function seedDatabase() {
         { id: 'sw_g2', rewardLabel: 'Free Conditioning Treatment', emoji: '💆‍♀️', weight: 50 },
       ],
     },
-    {
-      id: 'biz_urban_spice',
-      name: 'Urban Spice Kitchen',
-      slug: 'urban-spice',
-      email: 'manager@urbanspice.com',
-      passwordHash: hashPassword('password123'),
-      staffPinHash: hashPin('4321'),
-      tier: 'spin-review',
-      timezone: 'Asia/Kolkata',
-      googleReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4',
-      googlePlaceId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
-      loyaltyTarget: 5,
-      loyaltyReward: 'Free Dessert',
-      category: 'Contemporary Indian Dining',
-      logoEmoji: '🍛',
-      address: '12 Spice Market Road',
-      accentColor: '#0e7c66',
-      active: true,
-      spinWheelConfiguration: [
-        { id: 'sw_u1', rewardLabel: 'Free Appetizer', emoji: '🥟', weight: 50 },
-        { id: 'sw_u2', rewardLabel: '10% Off Bill', emoji: '🏷️', weight: 50 },
-      ],
-    },
-    {
-      id: 'biz_zen_tea',
-      name: 'Zenith Tea House',
-      slug: 'zen-tea',
-      email: 'manager@zentea.com',
-      passwordHash: hashPassword('password123'),
-      staffPinHash: hashPin('8765'),
-      tier: 'loyalty-review',
-      timezone: 'Asia/Kolkata',
-      googleReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4',
-      googlePlaceId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
-      loyaltyTarget: 4,
-      loyaltyReward: 'Complimentary Matcha Latte & Mochi',
-      category: 'Artisanal Teahouse',
-      logoEmoji: '🍵',
-      address: '99 Blossom Lane',
-      accentColor: '#0e7c66',
-      active: true,
-      spinWheelConfiguration: [],
-    },
   ];
 
   for (const b of defaultBusinesses) {
     db.businesses.set(b.id, b);
+
+    // Seed active campaign offer for this business
+    const offerId = `off_${b.id}_launch`;
+    if (!db.offers.has(offerId)) {
+      const now = new Date();
+      const expiresAt = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString(); // 30 days
+      db.offers.set(offerId, {
+        id: offerId,
+        businessId: b.id,
+        title: `${b.name} Grand Engagement Campaign`,
+        description: 'Primary customer reward and review acceleration campaign.',
+        tier: b.tier,
+        status: 'active',
+        createdAt: now.toISOString(),
+        activatedAt: now.toISOString(),
+        expiresAt,
+        cancelledAt: null,
+        durationDays: 30,
+        spinWheelConfiguration: b.spinWheelConfiguration,
+        loyaltyTarget: b.loyaltyTarget,
+        loyaltyReward: b.loyaltyReward,
+        metrics: {
+          scans: 12,
+          identifiedGuests: 8,
+          rewardsIssued: 6,
+          rewardsRedeemed: 4,
+          reviewsPrompted: 5,
+          reviewsPersisted: 3,
+        },
+      });
+    }
   }
 
   db.saveToDisk();

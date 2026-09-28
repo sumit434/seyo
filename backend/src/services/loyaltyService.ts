@@ -3,6 +3,7 @@ import { isCompletedToday } from '../utils/timezone.js';
 import { getBusinessById } from './businessService.js';
 import { getCustomerById } from './customerService.js';
 import { issueReward } from './rewardService.js';
+import { recordOfferMetric } from './offerService.js';
 
 export function stampLoyaltyVisit(businessId: string, customerId: string) {
   const business = getBusinessById(businessId);
@@ -10,11 +11,11 @@ export function stampLoyaltyVisit(businessId: string, customerId: string) {
     return { success: false, statusCode: 404, message: 'Business not found' };
   }
 
-  if (business.tier !== 'loyalty' && business.tier !== 'combined' && business.tier !== 'loyalty-review') {
+  if (business.tier !== 'loyalty' && business.tier !== 'combined') {
     return {
       success: false,
       statusCode: 403,
-      message: 'Digital Loyalty module is not enabled for this establishment.',
+      message: 'Loyalty module is not enabled for this establishment.',
     };
   }
 
@@ -50,6 +51,7 @@ export function stampLoyaltyVisit(businessId: string, customerId: string) {
       business.loyaltyReward || 'Loyalty Milestone Reward',
       'loyalty'
     );
+    recordOfferMetric(businessId, 'rewardsIssued');
   }
 
   db.saveToDisk();
