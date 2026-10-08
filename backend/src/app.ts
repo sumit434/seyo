@@ -1,23 +1,60 @@
-import express from 'express';
-import { apiRouter } from './routes/api.js';
-import { seedDatabase } from './seeds/seedBusiness.js';
+import express, { Express } from 'express';
+import onboardingRoutes from './routes/onboardingRoutes';
+import entryRoutes from './routes/entryRoutes';
+import customerAuthRoutes from './routes/customerAuthRoutes';
+import customerRoutes from './routes/customerRoutes';
+import staffRoutes from './routes/staffRoutes';
+import paymentRoutes from './routes/paymentRoutes';
+import developerRoutes from './routes/developerRoutes';
+import { errorMiddleware } from './middleware/errorMiddleware';
 
-export function createExpressApp() {
-  // Ensure default seeds exist
-  seedDatabase();
-
+export function createExpressApp(): Express {
   const app = express();
 
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
+  // Middleware with rawBody preservation for payment webhooks
+  app.use(
+    express.json({
+      limit: '5mb',
+      verify: (req: any, _res, buf) => {
+        req.rawBody = buf;
+      },
+    })
+  );
+  app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
-  // API router mounted under /api
-  app.use('/api', apiRouter);
+  // Security Headers & CORS
+  app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    next();
+  });
 
   // Health check
-  app.get('/health', (req, res) => {
-    res.json({ status: 'ok', service: 'seyo-platform', time: new Date().toISOString() });
+  app.get('/api/health', (req, res) => {
+    res.json({
+      status: 'healthy',
+      platform: 'SEYO Merchant & Customer Platform',
+      version: '1.0.0',
+      timestamp: new Date().toISOString(),
+    });
   });
+
+  // Mount API Routes
+  app.use('/api/onboarding', onboardingRoutes);
+  app.use('/api/payments', paymentRoutes);
+  app.use('/api/entry', entryRoutes);
+  // Conceptual shorthand /tap/:slug redirects to /api/entry/tap/:slug
+  app.use('/tap', (req, res) => {
+    res.redirect(302, `/api/entry/tap${req.url}`);
+  });
+  app.use('/api/auth', customerAuthRoutes);
+  app.use('/api/customer', customerRoutes);
+  app.use('/api/staff', staffRoutes);
+  app.use('/api/developer', developerRoutes);
+
+  // Central Error Handler
+  app.use(errorMiddleware);
 
   return app;
 }
